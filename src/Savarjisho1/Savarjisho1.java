@@ -1,22 +1,20 @@
 package Savarjisho1;
 
-import java.util.Arrays;
-import java.util.TreeMap;
+import java.util.ArrayList;
 
 public class Savarjisho1 {
     public static void main(String[] args) {
-        String text = "hofgnbfi ubnockxuibwhoifj aiyvboujzahbfdiiuoanf yivubaiebwuowfiano";
-        text = text.replace(",", "").replace(".", "").replace(" ", "").toLowerCase();
+        String[] Array = {"apple", "bee", "apple", "cream", "apple", "bear"};
+        ArrayList<String> List = new ArrayList<>();
+        int count = 0;
 
-        TreeMap<Character, Integer> characterAmount = new TreeMap<>();
-
-        char[] SortedTextCharacters = text.toCharArray();
-        Arrays.sort(SortedTextCharacters);
-
-        for (char character : SortedTextCharacters){
-            characterAmount.put(character, characterAmount.getOrDefault(character, 0) + 1);
+        for (String text : Array) {
+            if (!List.contains(text)) {
+                List.add(text);
+                count++;
+            }
         }
 
-        System.out.println(characterAmount);
+        System.out.println(count);
     }
 }

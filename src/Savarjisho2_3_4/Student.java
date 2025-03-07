@@ -59,7 +59,7 @@ public class Student implements Comparable<Student> {
         return StudentGrades;
     }
 
-    public int getAverageGrade(){
+    public double getAverageGrade(){
         int AverageGrade = 0;
         int AmountOfGrades = 0;
         for(String lesson : StudentLessons){
@@ -68,12 +68,12 @@ public class Student implements Comparable<Student> {
                 AmountOfGrades++;
             }
         }
-        return AverageGrade/AmountOfGrades;
+        return (double) AverageGrade/AmountOfGrades;
     }
 
     @Override
     public int compareTo(Student o) {
-        return Integer.compare(getAverageGrade(), o.getAverageGrade());
+        return Double.compare(getAverageGrade(), o.getAverageGrade());
     }
 
     public static void main(String[] args) {
@@ -89,9 +89,10 @@ public class Student implements Comparable<Student> {
         ArrayList<Integer> MathGrades = new ArrayList<Integer>();
         MathGrades.add(10);
         MathGrades.add(10);
-        MathGrades.add(2);
+        MathGrades.add(6);
         student.AddGrade("Math", MathGrades);
 
         System.out.println(student.getAverageGrade());
     }
+
 }
